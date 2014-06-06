@@ -1,22 +1,31 @@
-def read_text():
-    f = open("myfile.txt")
-    filetext = f.read()
-    char_list=list(filetext)
-    char_list_lower=char_list.lower
-    return char_list_lower
+def read_text(text_file):
+	f = open(text_file)
+	filetext = f.read()
+	file_text_lowercase=filetext.lower()
+	char_list=list(file_text_lowercase)
+	return char_list
 
-def count_letters(char_list_lower):
+def count_letters(char_list):
 	letter_tallies=[]
-    alphabet=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-    for letter in alphabet:
-        total=char_list_lower.count(letter)
-        letter_tallies.append(total)
+	alphabet=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+	for letter in alphabet:
+		total=char_list.count(letter)
+		letter_tallies.append(total)
+	return letter_tallies
 
-def print_letters():
-	
+def print_letters(letter_tallies):
+	for tally in letter_tallies:
+		print tally
 
-         
+		 
 def main():
+	char_list=read_text("twain.txt")
+
+	letter_tallies=count_letters(char_list)
+
+	print_letters(letter_tallies)
+
+
 
 
 if __name__ == '__main__':
