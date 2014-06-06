@@ -1,3 +1,10 @@
+def generate_alphabet():
+	output=[]
+	alphabet=range(ord('a'),ord('z')+1)
+	for item in alphabet:
+		output.append(chr(item))
+	return output
+
 def read_text(text_file):
 	f = open(text_file)
 	filetext = f.read()
@@ -7,7 +14,7 @@ def read_text(text_file):
 
 def count_letters(char_list):
 	letter_tallies=[]
-	alphabet=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+	alphabet=generate_alphabet()
 	for letter in alphabet:
 		total=char_list.count(letter)
 		letter_tallies.append(total)
